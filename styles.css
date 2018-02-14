@@ -1,0 +1,131 @@
+
+html,body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body{
+	background-color: #ccc;
+}
+h1{
+	text-align: center;
+}
+.calculator{
+	font-size:32px;
+	font-family: arial sans-serif;
+	border: 1px solid #333;
+	border-radius: 50px 30px 40px 40px / 30px 30px 300px 300px;
+	overflow:hidden;
+	padding: 40px;
+
+	box-shadow:#333 0px 0px 30px 5px;
+	
+	height: 400px;
+	width: 400px;
+	margin: auto;
+	background-color: gray;
+	display:grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+	"d d d d d"
+	"n n n f f"
+	"n n n o o"
+	"n n n o o"
+	"n n n o o";
+}
+.display{
+	grid-area: d;
+	font-size:60px;
+	font-family: "Lucida Console", Monaco, monospace;
+	background-color: #e2d8a3;
+	border-color: #e2d8a3;
+	border-style: inset;
+	border-width: 5px;
+	border-radius: 10px;
+	margin-bottom:20px;
+	text-align: right;
+	height: 100px;
+	line-height: 115px;
+	padding-right: 10px;
+	box-shadow: inset 2px 2px 2px 2px rgba(0,0,0,0.5);
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.numbers{
+	grid-area: n;
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	
+}
+.numbers  .wide{
+	grid-column: 1/3;
+}
+.numbers div{
+	background-color: #c6c6c6;
+}
+.operands{
+	grid-area: o;
+
+	
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+.operands .tall{
+	grid-row: 2/4;
+	grid-column: 2/3;
+}
+.operands div{
+	background-color: #a8a8a8;
+	border-color: #a8a8a8;
+}
+.functions{
+	grid-area: f;
+
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+}
+.functions div{
+	background-color: #d8865d;
+	border-color: #d8865d;
+	font-size: 27px;
+}
+
+.numbers, .operands, .functions{
+	grid-gap:10px;
+}
+.numbers div, .operands div, .functions div{
+	font-weight: bold;
+	color: #eeefc4;
+	border-style: outset;
+	border-width: 3px;
+	border-radius: 10px;
+	box-shadow:#333 0px 0px 3px 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*below stops text highlighting*/
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.numbers div:active, .operands div:active, .functions div:active{
+	border-style: inset;
+}
+
+
+
+
